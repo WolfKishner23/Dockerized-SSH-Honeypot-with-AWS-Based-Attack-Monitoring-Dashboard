@@ -56,7 +56,7 @@ Port 22 → SSH (My IP)
 Port 2222 → Honeypot SSH (0.0.0.0/0)
 Port 5000 → Dashboard (0.0.0.0/0)
 ```
-![secure](screenshots/security-groups.png)
+
 
 ## 🔐 2. IAM Role Setup
 
@@ -65,7 +65,7 @@ Port 5000 → Dashboard (0.0.0.0/0)
 - Attach Policy: AmazonS3FullAccess
 - Attach role to EC2 instance
 ```
-![role](screenshots/Create_roled.png)
+
 ---
 
 ## 🐳 3. Install Docker
@@ -80,7 +80,7 @@ sudo systemctl start docker
 sudo usermod -aG docker ubuntu
 
 ```
-![docker](screenshots/docker_status.png)
+
 ---
 
 ## 🐳 4. Deploy Cowrie Honeypot
@@ -136,7 +136,7 @@ docker-compose up -d
 ```bash
 ssh root@<EC2-IP> -p 2222
 ```
-![attack](screenshots/done.png)
+
 ---
 
 ## 📁 8. Verify Logs
@@ -150,7 +150,7 @@ ls cowrie-data/log/cowrie/
 ```bash
 Bucket Name: honeypot-logs-yourname
 ```
-![bucket](screenshots/create-bucket-check.png)
+
 
 ---
 
@@ -159,7 +159,7 @@ Bucket Name: honeypot-logs-yourname
 ```bash
 aws s3 sync ./cowrie-data/log/ s3://your-bucket-name/
 ```
-![s3](screenshots/upload-log-s3-bucket.png)
+
 
 ---
 
